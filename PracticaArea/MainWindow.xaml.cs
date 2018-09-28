@@ -28,14 +28,7 @@ namespace PracticaArea
 
         private void btnButtonRec(object sender, RoutedEventArgs e)
         {
-           /* float BaseRec =
-            float.Parse(txtBaseRec.Text);
-
-            float AlturaRec =
-            float.Parse(txtAlturaRec.Text);
-
-            float AreaRec = BaseRec * AlturaRec;
-            txtAreaRec.Text = AreaRec.ToString();*/
+           
         }
 
         private void btnButtonTri(object sender, RoutedEventArgs e)
@@ -105,11 +98,34 @@ namespace PracticaArea
             double area = 0.0;
             switch (cbTipoFigura.SelectedIndex)
             {
-                case 0: //Cuadrado
+                case 0: //Rectangulo
+                    var controlAreaRectangulo =
+                        (ControlAreaRectangulo)
+                        panelConfiguracion.Children[0];
+
+                    float BaseRec = 
+                        float.Parse(
+                        controlAreaRectangulo.txtBaseRec.Text);
+
+
+                    float AlturaRec =
+                        float.Parse(
+                        controlAreaRectangulo.txtAlturaRec.Text);
+
+                    area = BaseRec * AlturaRec;
+                    
                     break;
                 case 1: //Triangulo
                     break;
                 case 2: // Circulo
+                    var controlAreaCirculo =
+                        (ControlAreaCirculo)
+                        panelConfiguracion.Children[0];
+                    float radio =
+                        float.Parse(
+                            controlAreaCirculo.txtRadio.Text
+                            );
+                    area = 3.14159f * radio * radio;
                     break;
                 case 3: //Trapecio
                     break;
