@@ -103,7 +103,7 @@ namespace PracticaArea
                         (ControlAreaRectangulo)
                         panelConfiguracion.Children[0];
 
-                    float BaseRec = 
+                    float BaseRec =
                         float.Parse(
                         controlAreaRectangulo.txtBaseRec.Text);
 
@@ -113,9 +113,23 @@ namespace PracticaArea
                         controlAreaRectangulo.txtAlturaRec.Text);
 
                     area = BaseRec * AlturaRec;
-                    
+
                     break;
                 case 1: //Triangulo
+                    var controlAreaTriangulo =
+                        (ControlAreaTriangulo)
+                        panelConfiguracion.Children[0];
+
+                    float BaseTri =
+                        float.Parse(
+                            controlAreaTriangulo.txtBaseTri.Text);
+
+                    float AlturaTri =
+                        float.Parse(
+                            controlAreaTriangulo.txtAlturaTri.Text);
+
+                    area = (BaseTri * AlturaTri) / 2;
+
                     break;
                 case 2: // Circulo
                     var controlAreaCirculo =
@@ -128,6 +142,22 @@ namespace PracticaArea
                     area = 3.14159f * radio * radio;
                     break;
                 case 3: //Trapecio
+                    var controlAreaTrapecio =
+                        (ControlAreaTrapecio)
+                        panelConfiguracion.Children[0];
+
+                    float BaseMay =
+                    float.Parse(controlAreaTrapecio.txtBaseMayor.Text);
+
+                    float BaseMen =
+                    float.Parse(controlAreaTrapecio.txtBaseMenor.Text);
+
+                    float AlturaTra =
+                    float.Parse(controlAreaTrapecio.txtAltura.Text);
+
+                    area = 
+                        ((BaseMay + BaseMen) *AlturaTra) / 2;
+
                     break;
                 default:
                     break;
